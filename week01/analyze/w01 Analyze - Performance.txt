@@ -1,0 +1,20 @@
+1. Sorting
+Performs multiple passes and comparisons.
+Complexity: O(n^2)
+
+2. StandardDeviation
+
+StandardDeviation1(): O(n)	Dos recorridos separados
+StandardDeviation2(): O(n^2)	Un recorrido dentro de otro
+StandardDeviation3() : O(n)    Sum() y un recorrido adicional
+
+
+3. Search
+SearchSorted1() — O(n)
+SearchSorted2() — O(logn)
+
+Which function has the better performance in the worst case?
+SearchSorted2() has better performance and is more efficient for large, sorted arrays.
+
+- SearchSorted1(): O(n) — checks elements one by one.
+- SearchSorted2(): O(log n) — eliminates half of the remaining elements with each search.
