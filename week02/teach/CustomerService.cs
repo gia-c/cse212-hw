@@ -11,22 +11,32 @@ public class CustomerService {
         // Test Cases
 
         // Test 1
-        // Scenario: 
-        // Expected Result: 
+        // Scenario: Create a queue with size 0 (invalid)
+        // Expected Result: max_size=10
         Console.WriteLine("Test 1");
-
-        // Defect(s) Found: 
+        var cs = new CustomerService(0);
+        Console.WriteLine(cs);
+        // Defect(s) Found: None
 
         Console.WriteLine("=================");
 
         // Test 2
-        // Scenario: 
-        // Expected Result: 
+        // Scenario: Create a queue with size -5 (invalid)
+        // Expected Result: max_size=10
         Console.WriteLine("Test 2");
-
-        // Defect(s) Found: 
+        cs = new CustomerService(-5);
+        Console.WriteLine(cs);
+        // Defect(s) Found: None
 
         Console.WriteLine("=================");
+
+        // Test 3
+        // Scenario: Create a queue with size 3 (valid)
+        // Expected Result: max_size=3
+        Console.WriteLine("Test 3");
+        cs = new CustomerService(3);
+        Console.WriteLine(cs);
+        // Defect(s) Found: None
 
         // Add more Test Cases As Needed Below
     }
