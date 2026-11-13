@@ -27,7 +27,24 @@
     /// in the list.
     /// </summary>
     /// <param name="numbers">array of integers</param>
+
+    // We create an empty HashSet<int> to store the numbers we have already visited.
+    // We use a foreach loop to go through each number.
+    // We calculate the complement (10 - number) to find the number needed to make 10.
+    // We use Contains() to check if that complement is already in the Set.
+    // If it exists, we display the pair.
+    // We add the current number to the Set using Add().
     private static void DisplaySumPairs(int[] numbers) {
-        // TODO Problem 2 - This should print pairs of numbers in the given array
+        HashSet<int> seen = new HashSet<int>();
+
+        foreach (int number in numbers) {
+            int complement = 10 - number;
+
+            if (seen.Contains(complement)) {
+                Console.WriteLine($"{number} {complement}");
+            }
+
+            seen.Add(number);
+        }
     }
 }

@@ -13,16 +13,37 @@
     /// <summary>Determine if there are any duplicate letters in the text provided</summary>
     /// <param name="text">Text to check for duplicate letters</param>
     /// <returns>true if all letters are unique, otherwise false</returns>
-    private static bool AreUniqueLetters(string text) {
-        // TODO Problem 1 - Replace the O(n^2) algorithm to use sets and O(n) efficiency
-        for (var i = 0; i < text.Length; ++i) {
-            for (var j = 0; j < text.Length; ++j) {
-                // Don't want to compare to yourself ... that will always result in a match
-                if (i != j && text[i] == text[j])
-                    return false;
-            }
-        }
+    // private static bool AreUniqueLetters(string text) {
+    //     // TODO Problem 1 - Replace the O(n^2) algorithm to use sets and O(n) efficiency
+    //     for (var i = 0; i < text.Length; ++i) {
+    //         for (var j = 0; j < text.Length; ++j) {
+    //             // Don't want to compare to yourself ... that will always result in a match
+    //             if (i != j && text[i] == text[j])
+    //                 return false;
+    //         }
+    //     }
 
-        return true;
+    //     return true;
+    // }
+
+
+
+
+
+    // We create an empty HashSet to store the letters.
+    // We use a foreach loop to check each letter in the string.
+    // We use Add() to insert each letter into the Set.
+    // If Add() returns false, it means the letter already exists, so we return false.
+    // If we finish checking all letters without finding duplicates, we return true.
+    private static bool AreUniqueLetters(string text) {
+    HashSet<char> letters = new HashSet<char>();
+
+    foreach (char letter in text) {
+        if (!letters.Add(letter)) {
+            return false;
+        }
     }
+
+    return true;
+}
 }
